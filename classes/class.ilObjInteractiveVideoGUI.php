@@ -2615,16 +2615,7 @@ class ilObjInteractiveVideoGUI extends ilObjectPluginGUI implements ilDesktopIte
 			#$this->ctrl->redirect($this, 'showTutorInsertCommentForm');
             $this->showTutorInsertCommentForm();
 		}
-
-	/*	if($is_tutor)
-		{
-			$this->editComments();
-		}
-		else
-		{
-			$this->showContent();
-		}
-	*/
+        
 	}
 
     /**
