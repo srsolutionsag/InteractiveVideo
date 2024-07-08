@@ -2612,10 +2612,11 @@ class ilObjInteractiveVideoGUI extends ilObjectPluginGUI implements ilDesktopIte
                 $this->showTutorInsertChapterForm();
                 return;
             }
-			$this->ctrl->redirect($this, 'showTutorInsertCommentForm');
+			#$this->ctrl->redirect($this, 'showTutorInsertCommentForm');
+            $this->showTutorInsertCommentForm();
 		}
 
-		if($is_tutor)
+	/*	if($is_tutor)
 		{
 			$this->editComments();
 		}
@@ -2623,6 +2624,7 @@ class ilObjInteractiveVideoGUI extends ilObjectPluginGUI implements ilDesktopIte
 		{
 			$this->showContent();
 		}
+	*/
 	}
 
     /**
