@@ -404,15 +404,12 @@ console.log(displayComments)
 	pro.registerTocClickListener = function(player_id) {
 		$('.description_exists').off('click');
 		$('.description_exists').on('click', function() {
-			var a = $(this).find('.toc_description').css('display') === 'block';
 			if($(this).find('.toc_description').css('display') === 'block'){
-				console.log('hide', a)
 				$(this).find('.toc_description').hide();
 				$(this).find('.toc_description').removeClass('tocManualOverride');
 				$(this).parent().removeClass('tocManualOverride');
 			} else {
 				//$('.toc_description').hide();
-				console.log('show',a )
 				$(this).find('.toc_description').show();
 				$(this).find('.toc_description').addClass('tocManualOverride');
 				$(this).parent().addClass('tocManualOverride');
