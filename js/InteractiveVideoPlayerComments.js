@@ -335,7 +335,7 @@ il.InteractiveVideoPlayerComments = (function (scope) {
 	pro.displayCommentsOrToc = function(displayComments, player_id){
 		let comments_block = $('#ul_scroll_' + player_id);
 		let toc_block = $('#ul_toc_' + player_id);
-
+console.log(displayComments)
 		if(displayComments) {
 			comments_block.css('display', 'block');
 			toc_block.css('display', 'none');
@@ -404,12 +404,15 @@ il.InteractiveVideoPlayerComments = (function (scope) {
 	pro.registerTocClickListener = function(player_id) {
 		$('.description_exists').off('click');
 		$('.description_exists').on('click', function() {
+			var a = $(this).find('.toc_description').css('display') === 'block';
 			if($(this).find('.toc_description').css('display') === 'block'){
+				console.log('hide', a)
 				$(this).find('.toc_description').hide();
 				$(this).find('.toc_description').removeClass('tocManualOverride');
 				$(this).parent().removeClass('tocManualOverride');
 			} else {
 				//$('.toc_description').hide();
+				console.log('show',a )
 				$(this).find('.toc_description').show();
 				$(this).find('.toc_description').addClass('tocManualOverride');
 				$(this).parent().addClass('tocManualOverride');
@@ -428,7 +431,6 @@ il.InteractiveVideoPlayerComments = (function (scope) {
 				$('.toc_item').removeClass('activeToc');
 				$(this).addClass('activeToc');
 				$('.toc_description').hide();
-				$('.tocManualOverride').show();
 				$(this).find('.toc_description').show();
 			}
 		});
