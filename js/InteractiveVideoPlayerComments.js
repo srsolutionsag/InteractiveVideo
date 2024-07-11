@@ -335,7 +335,6 @@ il.InteractiveVideoPlayerComments = (function (scope) {
 	pro.displayCommentsOrToc = function(displayComments, player_id){
 		let comments_block = $('#ul_scroll_' + player_id);
 		let toc_block = $('#ul_toc_' + player_id);
-console.log(displayComments)
 		if(displayComments) {
 			comments_block.css('display', 'block');
 			toc_block.css('display', 'none');
