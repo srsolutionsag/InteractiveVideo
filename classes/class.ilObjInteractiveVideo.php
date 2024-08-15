@@ -399,11 +399,13 @@ class ilObjInteractiveVideo extends ilObjectPlugin implements ilLPStatusPluginIn
 	{
         if (((!$this->referenced) || ($this->countReferences() == 1)) && $this->video_source_object !== null ) {
             $this->getVideoSourceObject($this->getSourceId());
-            $this->video_source_object->beforeDeleteVideoSource($this->getId());
-            self::deleteComments(self::getCommentIdsByObjId($this->getId(), false));
+            if($this->getId() !== null) {
+                $this->video_source_object->beforeDeleteVideoSource($this->getId());
+                self::deleteComments(self::getCommentIdsByObjId($this->getId(), false));
 
-            $this->db->manipulate('DELETE FROM ' . self::TABLE_NAME_OBJECTS . ' WHERE obj_id = ' . $this->db->quote($this->getId(), 'integer'));
-            $this->deleteMetaData();
+                $this->db->manipulate('DELETE FROM ' . self::TABLE_NAME_OBJECTS . ' WHERE obj_id = ' . $this->db->quote($this->getId(), 'integer'));
+                $this->deleteMetaData();
+            }
         }
         return true;
 	}
