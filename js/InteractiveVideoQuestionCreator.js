@@ -159,7 +159,7 @@ InteractiveVideoQuestionCreator = (function () {
 	};
 
 	pub.Init = function () {
-		if(IVQuestionCreator.type === '' && IVQuestionCreator.type > 2)
+		if(IVQuestionCreator.JSON.length === 0 && IVQuestionCreator.type !== 2)
 		{
 			InteractiveVideoQuestionCreator.appendEmptyJSON();
 		}
