@@ -109,7 +109,6 @@ InteractiveVideoQuestionCreator = (function () {
 	pro.showHideFormElementsPointsForNeutralAnswers = function()
 	{
 		var value = parseInt($('#neutral_type').val(), 10);
-		console.log('pro.showHideFormElementsPointsForNeutralAnswers();')
 		if(IVQuestionCreator.type !== 2){
 			if( value === 0)
 			{
@@ -160,7 +159,7 @@ InteractiveVideoQuestionCreator = (function () {
 	};
 
 	pub.Init = function () {
-		if(IVQuestionCreator.JSON.length === 0)
+		if(IVQuestionCreator.type === '' && IVQuestionCreator.type > 2)
 		{
 			InteractiveVideoQuestionCreator.appendEmptyJSON();
 		}
