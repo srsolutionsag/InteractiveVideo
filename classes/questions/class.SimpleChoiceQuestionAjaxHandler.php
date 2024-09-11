@@ -258,9 +258,11 @@ class SimpleChoiceQuestionAjaxHandler
 
 		while($row = $ilDB->fetchAssoc($res))
 		{
-			$question_data[$counter]['answer']    = $row['answer'];
-			$question_data[$counter]['answer_id'] = $row['answer_id'];
-			$question_data[$counter]['correct']   = $row['correct'];
+            if($type !== 2) {
+                $question_data[$counter]['answer']    = $row['answer'];
+                $question_data[$counter]['answer_id'] = $row['answer_id'];
+                $question_data[$counter]['correct']   = $row['correct'];
+            }
 			$question_text           = $row['question_text'];
 			$question_type           = $row['type'];
 			$question_id             = $row['question_id'];
