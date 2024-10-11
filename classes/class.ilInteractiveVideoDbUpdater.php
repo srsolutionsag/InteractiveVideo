@@ -50,7 +50,7 @@ class ilInteractiveVideoDbUpdater extends ilPluginDBUpdate
 
 	}
 
-	
+
 	protected function iterateThroughUpdateFiles(): void
 	{
 		foreach($this->update_files as $file)
@@ -112,7 +112,7 @@ class ilInteractiveVideoDbUpdater extends ilPluginDBUpdate
      * @param int $a_version
      * @return void
      */
-    public function setCurrentVersion(int $a_version): void
+    protected function setCurrentVersion(?int $a_version): void
 	{
 		$this->db->update('rep_robj_xvid_sources',
 			[
@@ -194,7 +194,7 @@ class ilInteractiveVideoDbUpdater extends ilPluginDBUpdate
 		$plugin_id = $this->getPluginId($folder);
 		if(file_exists($folder . 'sql/dbupdate.php'))
 		{
-			$this->update_map[$plugin_id] = $folder . 'sql/dbupdate.php'; 
+			$this->update_map[$plugin_id] = $folder . 'sql/dbupdate.php';
 		}
 	}
 
